@@ -16,10 +16,10 @@ class Display extends React.Component {
 
     render() {
         return (
-            <div className="display" data-testId="PLAYERS-LIST">
+            <div className="display" data-testid="PLAYERS-LIST">
                 {this.props.lastData.map((data) => {
                     return (
-                        <div key={data.id} className="card">
+                        <div key={Date.now()} className="card">
                             <h1>Name: {data.name}</h1>
                             <h2>Country: {data.country}</h2>
                             <h2>Searches: {data.searches}</h2>
