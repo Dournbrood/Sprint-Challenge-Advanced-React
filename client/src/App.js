@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Display from './components/Display';
+import { useLocalStorage } from './hooks/useLocalStorage';
+
+const initialDataValues = [[{
+  country: "Waiting on API response!",
+  id: "Wouldn't you like to know?",
+  name: "Don't know yet",
+  searches: "Absolutely no idea."
+}]];
 
 function App() {
+  const [lastData, setLastData] = useLocalStorage("lastData", initialDataValues);
+
+  const setData = (data) => {
+    setLastData(data);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Display lastData={lastData} setLastData={setData} />
     </div>
   );
 }
