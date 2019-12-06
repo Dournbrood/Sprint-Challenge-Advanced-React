@@ -5,7 +5,7 @@ import { useLocalStorage } from './hooks/useLocalStorage';
 
 const initialDataValues = [[{
   country: "Waiting on API response!",
-  id: 0,
+  id: "Wouldn't you like to know?",
   name: "Don't know yet",
   searches: "Absolutely no idea."
 }]];
