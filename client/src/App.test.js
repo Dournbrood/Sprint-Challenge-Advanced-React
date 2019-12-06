@@ -1,9 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import Display from "./components/Display";
+import { render } from '..node_modules/@testing-library/react';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+test("App renders without crashing...", () => {
+  render(<App />);
+});
+
+test("Display renders...", () => {
+  render(<Display />);
+});
+
+test("List of players render...", () => {
+  const { getByTestId } = render(<Display />);
+  getByTestId(/players-list/i);
 });
