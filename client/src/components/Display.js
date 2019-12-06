@@ -19,7 +19,7 @@ class Display extends React.Component {
             <div className="display" data-testid="PLAYERS-LIST">
                 {this.props.lastData.map((data) => {
                     return (
-                        <div key={Date.now()} className="card">
+                        <div key={data.id} className="card">
                             <h1>Name: {data.name}</h1>
                             <h2>Country: {data.country}</h2>
                             <h2>Searches: {data.searches}</h2>
